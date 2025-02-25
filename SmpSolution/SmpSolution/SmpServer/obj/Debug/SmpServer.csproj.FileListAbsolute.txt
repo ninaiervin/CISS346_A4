@@ -1,0 +1,20 @@
+C:\Code\SmpSolution\SmpServer\bin\Debug\SmpServer.exe.config
+C:\Code\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
+C:\Code\SmpSolution\SmpServer\bin\Debug\SmpServer.pdb
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.AssemblyReference.cache
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.Properties.Resources.resources
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.GenerateResource.cache
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.CoreCompileInputs.cache
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.exe
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.pdb
+C:\Code\SmpSolution\SmpServer\obj\Debug\SmpServer.FormSmpServer.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.AssemblyReference.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.Properties.Resources.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.GenerateResource.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.CoreCompileInputs.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe.config
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.FormSmpServer.resources

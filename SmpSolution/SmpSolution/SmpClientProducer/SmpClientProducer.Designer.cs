@@ -69,6 +69,7 @@
             this.textBoxApplicationPortNumber.TabIndex = 3;
             this.textBoxApplicationPortNumber.Text = "50400";
             this.textBoxApplicationPortNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxApplicationPortNumber.TextChanged += new System.EventHandler(this.textBoxApplicationPortNumber_TextChanged);
             // 
             // labelApplicationPortNumber
             // 
@@ -87,6 +88,7 @@
             this.textBoxServerIPAddress.TabIndex = 1;
             this.textBoxServerIPAddress.Text = "127.0.0.1";
             this.textBoxServerIPAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxServerIPAddress.TextChanged += new System.EventHandler(this.textBoxServerIPAddress_TextChanged);
             // 
             // labelServerIPAddress
             // 
@@ -135,6 +137,7 @@
             this.buttonSendMessage.TabIndex = 3;
             this.buttonSendMessage.Text = "Send Message";
             this.buttonSendMessage.UseVisualStyleBackColor = true;
+            this.buttonSendMessage.Click += new System.EventHandler(this.buttonSendMessage_Click);
             // 
             // textBoxMessageContent
             // 
@@ -144,6 +147,7 @@
             this.textBoxMessageContent.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxMessageContent.Size = new System.Drawing.Size(343, 155);
             this.textBoxMessageContent.TabIndex = 2;
+            this.textBoxMessageContent.TextChanged += new System.EventHandler(this.textBoxMessageContent_TextChanged);
             // 
             // labelMessageContent
             // 

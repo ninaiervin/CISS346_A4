@@ -61,6 +61,7 @@
             this.startServerButton.TabIndex = 0;
             this.startServerButton.Text = "Start Server";
             this.startServerButton.UseVisualStyleBackColor = true;
+            this.startServerButton.Click += new System.EventHandler(this.startServerButton_Click_1);
             // 
             // settingsGroupBox
             // 
@@ -83,6 +84,7 @@
             this.textBoxPortNumber.TabIndex = 3;
             this.textBoxPortNumber.Text = "50400";
             this.textBoxPortNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPortNumber.TextChanged += new System.EventHandler(this.textBoxPortNumber_TextChanged);
             // 
             // textBoxServerIPAddress
             // 
@@ -92,6 +94,7 @@
             this.textBoxServerIPAddress.TabIndex = 2;
             this.textBoxServerIPAddress.Text = "0.0.0.0";
             this.textBoxServerIPAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxServerIPAddress.TextChanged += new System.EventHandler(this.textBoxServerIPAddress_TextChanged);
             // 
             // labelPortNumber
             // 
@@ -123,6 +126,7 @@
             this.groupBoxLastRece.TabIndex = 2;
             this.groupBoxLastRece.TabStop = false;
             this.groupBoxLastRece.Text = "Last Received Message";
+            this.groupBoxLastRece.Enter += new System.EventHandler(this.groupBoxLastRece_Enter);
             // 
             // textBox1
             // 
@@ -131,6 +135,7 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // labelMessagePriority
             // 
@@ -178,6 +183,7 @@
             this.buttonShowMessages.TabIndex = 2;
             this.buttonShowMessages.Text = "Show Messages";
             this.buttonShowMessages.UseVisualStyleBackColor = true;
+            this.buttonShowMessages.Click += new System.EventHandler(this.buttonShowMessages_Click);
             // 
             // textBox2
             // 
@@ -187,6 +193,7 @@
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBox2.Size = new System.Drawing.Size(355, 181);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // groupBoxPriority
             // 
@@ -200,6 +207,7 @@
             this.groupBoxPriority.TabIndex = 0;
             this.groupBoxPriority.TabStop = false;
             this.groupBoxPriority.Text = "Priority";
+            this.groupBoxPriority.Enter += new System.EventHandler(this.groupBoxPriority_Enter);
             // 
             // radioButtonAll
             // 
@@ -211,6 +219,7 @@
             this.radioButtonAll.TabStop = true;
             this.radioButtonAll.Text = "All";
             this.radioButtonAll.UseVisualStyleBackColor = true;
+            this.radioButtonAll.CheckedChanged += new System.EventHandler(this.radioButtonAll_CheckedChanged);
             // 
             // radioButtonHigh
             // 
@@ -222,6 +231,7 @@
             this.radioButtonHigh.TabStop = true;
             this.radioButtonHigh.Text = "High";
             this.radioButtonHigh.UseVisualStyleBackColor = true;
+            this.radioButtonHigh.CheckedChanged += new System.EventHandler(this.radioButtonHigh_CheckedChanged);
             // 
             // radioButtonMedium
             // 
@@ -233,6 +243,7 @@
             this.radioButtonMedium.TabStop = true;
             this.radioButtonMedium.Text = "Medium";
             this.radioButtonMedium.UseVisualStyleBackColor = true;
+            this.radioButtonMedium.CheckedChanged += new System.EventHandler(this.radioButtonMedium_CheckedChanged);
             // 
             // radioButtonLow
             // 
@@ -244,6 +255,7 @@
             this.radioButtonLow.TabStop = true;
             this.radioButtonLow.Text = "Low";
             this.radioButtonLow.UseVisualStyleBackColor = true;
+            this.radioButtonLow.CheckedChanged += new System.EventHandler(this.radioButtonLow_CheckedChanged);
             // 
             // FormSmpServer
             // 

@@ -69,12 +69,14 @@ namespace SmpClientProducer
             }
 
             String textBoxMsg = textBoxMessageContent.Text;
-            String encryptedMessage = Encryption.EncryptMessage(textBoxMsg, "public.key");
-            String signedmessage = SignMessage(textBoxMessageContent.Text);
+            String encryptedMessage = Encryption.EncryptMessage(textBoxMsg, "Public.key");
+            byte[] messgaeBytes = Encoding.ASCII.GetBytes(textBoxMsg);
+            byte[] signedHash = HashAndSignBytes(messgaeBytes, "Private.key", SHA256.Create());
+            String signedmessage = Encoding.ASCII.GetString(signedHash);
 
 
 
-            return date + MESSAGE_SEPERATOR + priority + MESSAGE_SEPERATOR + encryptedMessage + MESSAGE_SEPERATOR + signedmessage;
+            return "SMPPUT" + MESSAGE_SEPERATOR + priority + MESSAGE_SEPERATOR + date + MESSAGE_SEPERATOR + encryptedMessage + MESSAGE_SEPERATOR + signedmessage;
         }
 
         String SignMessage(String message)

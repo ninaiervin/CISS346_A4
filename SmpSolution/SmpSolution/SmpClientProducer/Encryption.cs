@@ -20,7 +20,7 @@ namespace SmpClientProducer
             RSACryptoServiceProvider cryptoService = new RSACryptoServiceProvider();
             cryptoService.ImportParameters(rsaParams);
 
-            //Encrypt and Decrypt bool Parameter: TRUE: OAEP Padding FALSE: PKCS#1.5 Padding
+            //Encrypt and Decrypt bool Parameter: TRUE: OAEP Padding FALSE: PKCS#1.5 Padding`
             byte[] encryptedMessageBytes = cryptoService.Encrypt(messageBytes, false);
 
             //Save the encrypted message to a file

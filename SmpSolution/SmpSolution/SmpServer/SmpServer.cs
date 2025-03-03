@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace SmpServer
 {
     public partial class FormSmpServer: Form
     {
+        String MESSAGE_SEPERATOR = "<MESSAGE_SEPERATOR>";
         public string IPAddress = "127.0.0.1";
         public int Port = 50400;
         private string messageType = "";
@@ -67,13 +70,55 @@ namespace SmpServer
         private void RecordClientMessage()
         {
             // textbox1 message priorty
-            textBox2
-                .AppendText(
-                clientMessage + Environment.NewLine);
-
-
-
             //StatusMessageTextbox.Text = "Message received: " + DateTime.Now;
+            String[] packageContent = Regex.Split(clientMessage, MESSAGE_SEPERATOR);
+            textBoxMessageType.Text = packageContent[0];
+            //textBox1.Text = packageContent[1]; // change later to low medium and high
+
+            if (packageContent[1] == "0")
+            {
+                textBox1.Text = "Low";
+            }
+            else if (packageContent[1] == "1")
+            {
+                textBox1.Text = "Medium";
+            } 
+            else if (packageContent[1] == "2")
+            {
+                textBox1.Text = "High";
+            }
+
+            if (packageContent[0] == "SMPPUT")
+            {
+                WriteSMPPUTMessageToFile(packageContent, clientMessage);
+            }
+            else
+            {
+                ReadSMPFGETMessageFromFile(packageContent);
+            }
+            //textBox2.AppendText(clientMessage + Environment.NewLine);
+
+        }
+
+        private void WriteSMPPUTMessageToFile(String[] packageContent, String clientMessage)
+        {
+            if (packageContent[1] == "0")
+            {
+                File.AppendAllText("Low.txt", clientMessage);
+            }
+            else if (packageContent[2] == "1")
+            {
+                File.AppendAllText("Medium.txt", clientMessage);
+            }
+            else
+            {
+                File.AppendAllText("High.txt", clientMessage);
+            }
+        }
+
+        private void ReadSMPFGETMessageFromFile(String[] packageContent)
+        {
+
         }
 
 

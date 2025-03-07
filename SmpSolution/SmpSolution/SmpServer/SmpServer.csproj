@@ -80,5 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmpLibrary\SmpLibrary.csproj">
+      <Project>{0f2b03fb-dfb7-4b6d-9391-c38a61f55160}</Project>
+      <Name>SmpLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

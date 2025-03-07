@@ -18,3 +18,16 @@ C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignme
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.pdb
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.FormSmpServer.resources
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe.config
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.AssemblyReference.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.FormSmpServer.resources
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.Properties.Resources.resources
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.GenerateResource.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.CoreCompileInputs.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.exe
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.dll
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.Up2Date

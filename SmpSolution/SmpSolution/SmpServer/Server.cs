@@ -2,7 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Text.RegularExpressions;
 using SmpServer;
+
 
 namespace SmpServer
 {
@@ -12,6 +14,7 @@ namespace SmpServer
         static TcpListener server;
         public static void Start(object obj)
         {
+            Console.WriteLine("Started.");
             serverForm = obj as FormSmpServer;
 
             server = new TcpListener(IPAddress.Parse(serverForm.IPAddress), serverForm.Port);
@@ -43,9 +46,23 @@ namespace SmpServer
 
             string message = streamReader.ReadLine();
 
+            Console.WriteLine(message);
+
             serverForm.RecordClientMessage(message);
 
             string response = "Received message: " + DateTime.Now;
+
+            string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
+
+            if (packageContent[0] == "SMPPUT")
+            {
+                serverForm.WriteSMPPUTMessageToFile(packageContent, message);
+            }
+            else if (packageContent[0] == "SMPGET")
+            {
+                serverForm.ReadSMPFGETMessageFromFile(packageContent);
+                return;
+            }
 
             SendResponse(response, networkStream);
 

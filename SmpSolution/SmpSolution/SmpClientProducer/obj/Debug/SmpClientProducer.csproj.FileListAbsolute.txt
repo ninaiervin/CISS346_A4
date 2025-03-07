@@ -18,3 +18,13 @@ C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignme
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.exe.config
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.exe
 C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4A\Assignment_4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.exe.config
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.exe
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\bin\Debug\SmpClientProducer.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.csproj.AssemblyReference.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.FormSmpClientProducer.resources
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.Properties.Resources.resources
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.csproj.GenerateResource.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.csproj.CoreCompileInputs.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.exe
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientProducer\obj\Debug\SmpClientProducer.pdb

@@ -4,3 +4,9 @@ C:\Code\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.AssemblyReference.cac
 C:\Code\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.CoreCompileInputs.cache
 C:\Code\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.dll
 C:\Code\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\bin\Debug\SmpLibrary.dll
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\bin\Debug\SmpLibrary.pdb
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.AssemblyReference.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.CoreCompileInputs.cache
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.dll
+C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.pdb

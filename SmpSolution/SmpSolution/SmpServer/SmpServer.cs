@@ -110,7 +110,7 @@ namespace SmpServer
             {
                 File.AppendAllText("Low.txt", clientMessage);
             }
-            else if (packageContent[2] == "1")
+            else if (packageContent[1] == "1")
             {
                 File.AppendAllText("Medium.txt", clientMessage);
             }

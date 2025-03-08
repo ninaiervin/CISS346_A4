@@ -92,6 +92,7 @@ namespace SmpServer
                 textBox1.Text = "High";
             }
 
+
             if (packageContent[0] == "SMPPUT")
             {
                 WriteSMPPUTMessageToFile(packageContent, clientMessage);
@@ -100,7 +101,6 @@ namespace SmpServer
             {
                 ReadSMPFGETMessageFromFile(packageContent);
             }
-            //textBox2.AppendText(clientMessage + Environment.NewLine);
 
         }
 
@@ -159,19 +159,16 @@ namespace SmpServer
 
                             if (messageParts.Length >= 4)
                             {
-                                string encryptedContent = messageParts[3];
-
-                                try
+                                int endOfFirstMessage = fileContent.IndexOf("SMPPUT", fileContent.IndexOf("SMPPUT") + 1);
+                                if (endOfFirstMessage == -1)
                                 {
-                                    messageResponse = Encryption.DecryptMessage(encryptedContent, "Private.key");
+                                    File.WriteAllText(priorityFile, "");
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    messageResponse = "Error decrypting message: " + ex.Message;
+                                    string newFileContent = fileContent.Substring(endOfFirstMessage);
+                                    File.WriteAllText(priorityFile, newFileContent);
                                 }
-
-                                string newFileContent = fileContent.Replace(firstMessage, "");
-                                File.WriteAllText(priorityFile, newFileContent);
                             }
                             else
                             {

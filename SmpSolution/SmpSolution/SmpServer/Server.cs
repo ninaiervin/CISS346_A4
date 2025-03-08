@@ -46,23 +46,11 @@ namespace SmpServer
 
             string message = streamReader.ReadLine();
 
-            Console.WriteLine(message);
-
             serverForm.RecordClientMessage(message);
 
             string response = "Received message: " + DateTime.Now;
 
             string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
-
-            if (packageContent[0] == "SMPPUT")
-            {
-                serverForm.WriteSMPPUTMessageToFile(packageContent, message);
-            }
-            else if (packageContent[0] == "SMPGET")
-            {
-                serverForm.ReadSMPFGETMessageFromFile(packageContent);
-                return;
-            }
 
             SendResponse(response, networkStream);
 

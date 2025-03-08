@@ -24,7 +24,6 @@ namespace SmpClientConsumer
                             string message = CreateSmpGetMessage(priority);
                             writer.WriteLine(message);
                             writer.Flush();
-
                             using (StreamReader reader = new StreamReader(networkStream))
                             {
                                 response = reader.ReadLine();
@@ -33,6 +32,7 @@ namespace SmpClientConsumer
                     }
                 }
 
+                Console.WriteLine(response);
                 return response;
             }
             catch (Exception ex)

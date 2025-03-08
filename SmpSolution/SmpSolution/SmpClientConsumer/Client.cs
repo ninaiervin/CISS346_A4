@@ -26,13 +26,12 @@ namespace SmpClientConsumer
                             writer.Flush();
                             using (StreamReader reader = new StreamReader(networkStream))
                             {
-                                response = reader.ReadLine();
+                                response = reader.ReadToEnd();
                             }
                         }
                     }
                 }
 
-                Console.WriteLine(response);
                 return response;
             }
             catch (Exception ex)

@@ -46,9 +46,12 @@ namespace SmpServer
 
             string message = streamReader.ReadLine();
 
-            serverForm.RecordClientMessage(message);
+            string response = serverForm.RecordClientMessage(message);
 
-            string response = "Received message: " + DateTime.Now;
+            if (response != null)
+            {
+                response = serverForm.DisplayMessage(response.Substring(6), -1);
+            }
 
             string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
 

@@ -54,7 +54,7 @@ namespace SmpServer
             Port = Int32.Parse(textBoxPortNumber.Text);
         }
 
-        public void RecordClientMessage(string clientMessage)
+        public string RecordClientMessage(string clientMessage)
         {
             try
             {
@@ -63,15 +63,15 @@ namespace SmpServer
                 //this.messagePriorty = messagePriorty;
 
 
-                Invoke(new MethodInvoker(RecordClientMessage));
+                return (string) Invoke(new Func<string>(RecordClientMessage));
             }
             catch (Exception)
             {
-
+                return null;
             }
         }
 
-        private void RecordClientMessage()
+        private string RecordClientMessage()
         {
             // textbox1 message priorty
             //StatusMessageTextbox.Text = "Message received: " + DateTime.Now;
@@ -96,10 +96,11 @@ namespace SmpServer
             if (packageContent[0] == "SMPPUT")
             {
                 WriteSMPPUTMessageToFile(packageContent, clientMessage);
+                return null;
             }
             else
             {
-                ReadSMPFGETMessageFromFile(packageContent);
+                return ReadSMPFGETMessageFromFile(packageContent);
             }
 
         }
@@ -155,25 +156,22 @@ namespace SmpServer
                         {
                             string firstMessage = "SMPPUT" + messages[0];
 
+                            
+
                             string[] messageParts = Regex.Split(firstMessage, MESSAGE_SEPERATOR);
 
-                            if (messageParts.Length >= 4)
+                            
+                            int endOfFirstMessage = fileContent.IndexOf("SMPPUT", fileContent.IndexOf("SMPPUT") + 1);
+                            if (endOfFirstMessage == -1)
                             {
-                                int endOfFirstMessage = fileContent.IndexOf("SMPPUT", fileContent.IndexOf("SMPPUT") + 1);
-                                if (endOfFirstMessage == -1)
-                                {
-                                    File.WriteAllText(priorityFile, "");
-                                }
-                                else
-                                {
-                                    string newFileContent = fileContent.Substring(endOfFirstMessage);
-                                    File.WriteAllText(priorityFile, newFileContent);
-                                }
+                                File.WriteAllText(priorityFile, "");
                             }
                             else
                             {
-                                messageResponse = "Invalid message format.";
+                                string newFileContent = fileContent.Substring(endOfFirstMessage);
+                                File.WriteAllText(priorityFile, newFileContent);
                             }
+                            messageResponse = firstMessage;
                         }
                         else
                         {
@@ -257,6 +255,54 @@ namespace SmpServer
             DisplayMessages(priorityFiles);
         }
 
+        internal String DisplayMessage(string message, int messageCount)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            string fullMessage = "SMPPUT" + message;
+            string[] messageParts = Regex.Split(fullMessage, MESSAGE_SEPERATOR);
+
+            if (messageCount > 0)
+            {
+                sb.AppendLine($"Message #{messageCount}");
+            }
+            
+            sb.AppendLine($"Type: {messageParts[0]}");
+
+            string priority;
+            switch (messageParts[1])
+            {
+                case "0":
+                    priority = "Low";
+                    break;
+                case "1":
+                    priority = "Medium";
+                    break;
+                case "2":
+                    priority = "High";
+                    break;
+                default:
+                    priority = "Unknown";
+                    break;
+            }
+
+            sb.AppendLine($"Priority: {priority}");
+            sb.AppendLine($"Timestamp: {messageParts[2]}");
+
+            string encryptedContent = messageParts[3];
+            try
+            {
+                string decryptedContent = Encryption.DecryptMessage(encryptedContent, "Private.key");
+                sb.AppendLine($"Content: {decryptedContent}");
+            }
+            catch (Exception ex)
+            {
+                sb.AppendLine($"Content: [Decryption failed: {ex.Message}]");
+            }
+
+            sb.AppendLine("----------------------------");
+            return sb.ToString();
+        }
         private void DisplayMessages(IEnumerable<string> files)
         {
             StringBuilder allMessages = new StringBuilder();
@@ -278,50 +324,12 @@ namespace SmpServer
 
                             foreach (string message in messages)
                             {
+              
                                 if (!string.IsNullOrEmpty(message))
                                 {
-                                    string fullMessage = "SMPPUT" + message;
-                                    string[] messageParts = Regex.Split(fullMessage, MESSAGE_SEPERATOR);
+                                    messageCount++;
 
-                                    if (messageParts.Length >= 4)
-                                    {
-                                        messageCount++;
-                                        allMessages.AppendLine($"Message #{messageCount}");
-                                        allMessages.AppendLine($"Type: {messageParts[0]}");
-
-                                        string priority;
-                                        switch (messageParts[1])
-                                        {
-                                            case "0":
-                                                priority = "Low";
-                                                break;
-                                            case "1":
-                                                priority = "Medium";
-                                                break;
-                                            case "2":
-                                                priority = "High";
-                                                break;
-                                            default:
-                                                priority = "Unknown";
-                                                break;
-                                        }
-
-                                        allMessages.AppendLine($"Priority: {priority}");
-                                        allMessages.AppendLine($"Timestamp: {messageParts[2]}");
-
-                                        string encryptedContent = messageParts[3];
-                                        try
-                                        {
-                                            string decryptedContent = Encryption.DecryptMessage(encryptedContent, "Private.key");
-                                            allMessages.AppendLine($"Content: {decryptedContent}");
-                                        }
-                                        catch (Exception ex)
-                                        {
-                                            allMessages.AppendLine($"Content: [Decryption failed: {ex.Message}]");
-                                        }
-
-                                        allMessages.AppendLine("----------------------------");
-                                    }
+                                    allMessages.Append(DisplayMessage(message, messageCount));
                                 }
                             }
 

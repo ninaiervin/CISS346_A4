@@ -44,6 +44,7 @@ namespace SmpClientConsumer
 
                 string message = Client.GetMessage(serverIp, port, priority);
 
+
                 textBoxMessageContent.Text = message;
             }
             catch (Exception ex)

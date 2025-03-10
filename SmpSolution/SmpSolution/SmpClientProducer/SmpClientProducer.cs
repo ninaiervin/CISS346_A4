@@ -70,9 +70,10 @@ namespace SmpClientProducer
 
             String textBoxMsg = textBoxMessageContent.Text;
             String encryptedMessage = Encryption.EncryptMessage(textBoxMsg, "Public.key");
-            byte[] messgaeBytes = Encoding.ASCII.GetBytes(textBoxMsg);
-            byte[] signedHash = HashAndSignBytes(messgaeBytes, "Private.key", SHA256.Create());
-            String signedmessage = Encoding.ASCII.GetString(signedHash);
+            //byte[] messgaeBytes = Encoding.ASCII.GetBytes(textBoxMsg);
+            //byte[] signedHash = HashAndSignBytes(messgaeBytes, "Private.key", SHA256.Create());
+            //String signedmessage = Encoding.ASCII.GetString(signedHash);
+            String signedmessage = SignMessage(encryptedMessage);
 
 
 
@@ -167,6 +168,11 @@ namespace SmpClientProducer
         }
 
         private void RecordServerResponse()
+        {
+            textBoxServerResponse.Text = serverResponse;
+        }
+
+        private void textBoxServerResponse_TextChanged(object sender, EventArgs e)
         {
             textBoxServerResponse.Text = serverResponse;
         }

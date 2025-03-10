@@ -29,7 +29,7 @@ namespace SmpClientProducer
         }
         private static void ProcessResponsePacket(string serverResponse, FormSmpClientProducer form)
         {
-            //form.RecordServerResponse(serverResponse);
+            form.RecordServerResponse(serverResponse);
         }
     }
 }

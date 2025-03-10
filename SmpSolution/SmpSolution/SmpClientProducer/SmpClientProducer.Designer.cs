@@ -115,6 +115,7 @@
             this.textBoxServerResponse.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.textBoxServerResponse.Size = new System.Drawing.Size(397, 22);
             this.textBoxServerResponse.TabIndex = 2;
+            this.textBoxServerResponse.TextChanged += new System.EventHandler(this.textBoxServerResponse_TextChanged);
             // 
             // groupBoxMessages
             // 

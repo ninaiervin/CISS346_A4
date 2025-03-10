@@ -55,7 +55,9 @@ namespace SmpServer
 
             string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
 
-            SendResponse(response, networkStream);
+            string serverResponse = "Received message: " + DateTime.Now;
+
+            SendResponse(serverResponse, networkStream);
 
             streamReader.Close();
         }

@@ -92,7 +92,7 @@
             this.textBoxServerIPAddress.Name = "textBoxServerIPAddress";
             this.textBoxServerIPAddress.Size = new System.Drawing.Size(148, 22);
             this.textBoxServerIPAddress.TabIndex = 2;
-            this.textBoxServerIPAddress.Text = "0.0.0.0";
+            this.textBoxServerIPAddress.Text = "127.0.0.1";
             this.textBoxServerIPAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxServerIPAddress.TextChanged += new System.EventHandler(this.textBoxServerIPAddress_TextChanged);
             // 

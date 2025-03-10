@@ -14,6 +14,7 @@ using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Xml.Serialization;
 using CryptographyUtilities;
+using System.Windows.Forms.VisualStyles;
 
 namespace SmpServer
 {
@@ -35,8 +36,6 @@ namespace SmpServer
             try
             {
                 ThreadPool.QueueUserWorkItem(Server.Start, this);
-
-                //StatusMessageTextbox.Text = "Server started...";
             }
             catch (Exception)
             {
@@ -59,9 +58,6 @@ namespace SmpServer
             try
             {
                 this.clientMessage = clientMessage;
-                //this.messageType = typeMessage;
-                //this.messagePriorty = messagePriorty;
-
 
                 return (string) Invoke(new Func<string>(RecordClientMessage));
             }
@@ -73,11 +69,8 @@ namespace SmpServer
 
         private string RecordClientMessage()
         {
-            // textbox1 message priorty
-            //StatusMessageTextbox.Text = "Message received: " + DateTime.Now;
             String[] packageContent = Regex.Split(clientMessage, MESSAGE_SEPERATOR);
             textBoxMessageType.Text = packageContent[0];
-            //textBox1.Text = packageContent[1]; // change later to low medium and high
 
             if (packageContent[1] == "0")
             {
@@ -95,35 +88,41 @@ namespace SmpServer
 
             if (packageContent[0] == "SMPPUT")
             {
-                WriteSMPPUTMessageToFile(packageContent, clientMessage);
-                return null;
+                WriteSMPPUTMessageToFile(packageContent);
+                return "put";
             }
             else
             {
                 return ReadSMPFGETMessageFromFile(packageContent);
             }
-
         }
 
-        internal void WriteSMPPUTMessageToFile(String[] packageContent, String clientMessage)
+        internal void WriteSMPPUTMessageToFile(String[] packageContent)
         {
+            String filecontent = null;
+            for (int i = 0; i < packageContent.Length; i++)
+            {
+                filecontent += packageContent[i] + Environment.NewLine;
+            }
             if (packageContent[1] == "0")
             {
-                File.AppendAllText("Low.txt", clientMessage);
+                File.AppendAllText("Low.txt", filecontent);
             }
             else if (packageContent[1] == "1")
             {
-                File.AppendAllText("Medium.txt", clientMessage);
+                File.AppendAllText("Medium.txt", filecontent);
             }
-            else
+            else if (packageContent[1] == "2")
             {
-                File.AppendAllText("High.txt", clientMessage);
+                File.AppendAllText("High.txt", filecontent);
             }
         }
 
         internal string ReadSMPFGETMessageFromFile(String[] packageContent)
         {
             string messageResponse = string.Empty;
+            StringBuilder record = new StringBuilder();
+
 
             string priorityFile;
             switch (packageContent[1])
@@ -150,33 +149,81 @@ namespace SmpServer
 
                     if (!string.IsNullOrEmpty(fileContent))
                     {
-                        string[] messages = fileContent.Split(new[] { "SMPPUT" }, StringSplitOptions.RemoveEmptyEntries);
 
-                        if (messages.Length > 0)
+                        //StringBuilder record = new StringBuilder();
+                        //String prevLine = "";
+                        String currLine = "";
+                        //String decryptedMessage = "";
+                        //bool toIncude = false;
+                        //bool consumed = false;
+                        int i = 0;
+                        using (StreamReader read = new StreamReader(priorityFile))
                         {
-                            string firstMessage = "SMPPUT" + messages[0];
-
-                            
-
-                            string[] messageParts = Regex.Split(firstMessage, MESSAGE_SEPERATOR);
-
-                            
-                            int endOfFirstMessage = fileContent.IndexOf("SMPPUT", fileContent.IndexOf("SMPPUT") + 1);
-                            if (endOfFirstMessage == -1)
+                            using (var write = new System.IO.StreamWriter("temp.txt"))
                             {
-                                File.WriteAllText(priorityFile, "");
+                                while ((currLine = read.ReadLine()) != null)
+                                {
+                                    if (i == 3)
+                                    {
+                                        string encryptedContent = currLine;
+                                        try
+                                        {
+                                            string replacement = Regex.Replace(encryptedContent, @"\t|\n|\r", string.Empty);
+                                            string decryptedContent = Encryption.DecryptMessage(replacement, "Private.key");
+                                            record.AppendLine($"Content: {decryptedContent}");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            record.AppendLine($"Content: [Decryption failed: {ex.Message}]");
+                                        }
+                                    }
+                                    else if (i == 2)
+                                    {
+                                        record.AppendLine($"Timestamp: {currLine}");
+                                    }
+                                    else if (i == 1)
+                                    {
+                                        string priority;
+                                        switch (currLine)
+                                        {
+                                            case "0":
+                                                priority = "Low";
+                                                break;
+                                            case "1":
+                                                priority = "Medium";
+                                                break;
+                                            case "2":
+                                                priority = "High";
+                                                break;
+                                            default:
+                                                priority = "Unknown";
+                                                break;
+                                        }
+
+                                        record.AppendLine($"Priority: {priority}");
+                                    }
+                                    else if (i == 0)
+                                    {
+                                        record.AppendLine($"Type: {currLine}");
+
+                                    }
+                                    else if (i > 4)
+                                    {
+                                        write.WriteLine(currLine);
+                                        write.WriteLine("\n");
+                                    }
+                                    i++;
+
+                                }
                             }
-                            else
-                            {
-                                string newFileContent = fileContent.Substring(endOfFirstMessage);
-                                File.WriteAllText(priorityFile, newFileContent);
-                            }
-                            messageResponse = firstMessage;
                         }
-                        else
+
+                        if (File.Exists(@"C:\"+ priorityFile))
                         {
-                            messageResponse = "No messages available in the queue.";
+                            File.Delete(@"C:\"+ priorityFile);
                         }
+                        System.IO.File.Move("temp.txt", priorityFile);
+                       
                     }
                     else
                     {
@@ -193,10 +240,8 @@ namespace SmpServer
                 messageResponse = "Error processing message: " + ex.Message;
             }
 
-            return messageResponse;
+            return record.ToString();
         }
-
-
 
         private void groupBoxLastRece_Enter(object sender, EventArgs e)
         {
@@ -259,8 +304,7 @@ namespace SmpServer
         {
             StringBuilder sb = new StringBuilder();
 
-            string fullMessage = "SMPPUT" + message;
-            string[] messageParts = Regex.Split(fullMessage, MESSAGE_SEPERATOR);
+            string[] messageParts = Regex.Split(message, MESSAGE_SEPERATOR);
 
             if (messageCount > 0)
             {
@@ -292,7 +336,8 @@ namespace SmpServer
             string encryptedContent = messageParts[3];
             try
             {
-                string decryptedContent = Encryption.DecryptMessage(encryptedContent, "Private.key");
+                string replacement = Regex.Replace(encryptedContent, @"\t|\n|\r", string.Empty);
+                string decryptedContent = Encryption.DecryptMessage(replacement, "Private.key");
                 sb.AppendLine($"Content: {decryptedContent}");
             }
             catch (Exception ex)
@@ -306,6 +351,7 @@ namespace SmpServer
         private void DisplayMessages(IEnumerable<string> files)
         {
             StringBuilder allMessages = new StringBuilder();
+            int messageCount = 0;
 
             foreach (string file in files)
             {
@@ -316,31 +362,35 @@ namespace SmpServer
                     string fileContent = File.ReadAllText(file);
                     if (!string.IsNullOrEmpty(fileContent))
                     {
-                        string[] messages = fileContent.Split(new[] { "SMPPUT" }, StringSplitOptions.RemoveEmptyEntries);
-
-                        if (messages.Length > 0)
+                        using (StreamReader read = new StreamReader(file))
                         {
-                            int messageCount = 0;
-
-                            foreach (string message in messages)
+                            string line;
+                            string section = "";
+                            int i = 0;
+                            while ((line = read.ReadLine()) != null)
                             {
-              
-                                if (!string.IsNullOrEmpty(message))
+                                if (i < 3)
                                 {
+                                    section += line + MESSAGE_SEPERATOR;
+                                }
+                                if (i == 3)
+                                {
+                                    section += line + MESSAGE_SEPERATOR;
                                     messageCount++;
 
-                                    allMessages.Append(DisplayMessage(message, messageCount));
+                                    allMessages.Append(DisplayMessage(section, messageCount));
+                                    i = 0;
                                 }
-                            }
+                                i++;
 
-                            if (messageCount == 0)
-                                allMessages.AppendLine("No valid messages found.");
+                            }
                         }
-                        else
-                        {
-                            allMessages.AppendLine("No messages found.");
-                        }
+
+                        if (messageCount == 0)
+                            allMessages.AppendLine("No valid messages found.");
+
                     }
+                   
                     else
                     {
                         allMessages.AppendLine("File is empty.");

@@ -47,17 +47,26 @@ namespace SmpServer
             string message = streamReader.ReadLine();
 
             string response = serverForm.RecordClientMessage(message);
-
-            if (response != null)
+            if (response == "put")
             {
-                response = serverForm.DisplayMessage(response.Substring(6), -1);
+                string serverResponse = "Received message: " + DateTime.Now;
+
+                SendResponse(serverResponse, networkStream);
+            }
+            else
+            {
+                if (response != null)
+                {
+                    response = serverForm.DisplayMessage(response.Substring(6), -1);
+                }
+                SendResponse(response, networkStream);
             }
 
-            string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
+            
 
-            string serverResponse = "Received message: " + DateTime.Now;
-
-            SendResponse(serverResponse, networkStream);
+            //string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
+            
+            
 
             streamReader.Close();
         }

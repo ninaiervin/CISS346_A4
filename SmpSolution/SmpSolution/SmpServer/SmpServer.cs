@@ -149,13 +149,7 @@ namespace SmpServer
 
                     if (!string.IsNullOrEmpty(fileContent))
                     {
-
-                        //StringBuilder record = new StringBuilder();
-                        //String prevLine = "";
                         String currLine = "";
-                        //String decryptedMessage = "";
-                        //bool toIncude = false;
-                        //bool consumed = false;
                         int i = 0;
                         using (StreamReader read = new StreamReader(priorityFile))
                         {
@@ -165,29 +159,16 @@ namespace SmpServer
                                 {
                                     if (i < 5)
                                     {
-                                        record.Append(currLine + Environment.NewLine);
+                                        record.Append(currLine + MESSAGE_SEPERATOR + Environment.NewLine);
                                     }
                                     else
                                     {
                                         write.WriteLine(currLine);
-                                        //write.WriteLine(Environment.NewLine);
                                     }
                                     i++;
                                 }
                             }
                         }
-
-                        //if (File.Exists(@"D:\" + priorityFile))
-                        //{
-                        //    File.Delete(@"D:\" + priorityFile);
-                        //}
-                        //System.IO.File.Move(@"C:\temp.txt", @"C:\" + priorityFile);
-                        //if (File.Exists("temp.txt"))
-                        //{
-                        //    File.Copy(oldName, newName, true);
-                        //    File.Delete(oldName);
-                        //}
-
                     }
                     else
                     {

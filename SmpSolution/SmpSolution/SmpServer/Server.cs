@@ -55,10 +55,10 @@ namespace SmpServer
             }
             else
             {
-                if (response != null)
-                {
-                    response = serverForm.DisplayMessage(response.Substring(6), -1);
-                }
+                //if (response != null)
+                //{
+                //    response = serverForm.DisplayMessage(response.Substring(6), -1);
+                //}
                 SendResponse(response, networkStream);
             }
 

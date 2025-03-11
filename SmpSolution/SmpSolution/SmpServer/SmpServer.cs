@@ -163,57 +163,16 @@ namespace SmpServer
                             {
                                 while ((currLine = read.ReadLine()) != null)
                                 {
-                                    if (i == 3)
+                                    if (i < 5)
                                     {
-                                        string encryptedContent = currLine;
-                                        try
-                                        {
-                                            string replacement = Regex.Replace(encryptedContent, @"\t|\n|\r", string.Empty);
-                                            string decryptedContent = Encryption.DecryptMessage(replacement, "Private.key");
-                                            record.AppendLine($"Content: {decryptedContent}");
-                                        }
-                                        catch (Exception ex)
-                                        {
-                                            record.AppendLine($"Content: [Decryption failed: {ex.Message}]");
-                                        }
+                                        record.Append(currLine + Environment.NewLine);
                                     }
-                                    else if (i == 2)
-                                    {
-                                        record.AppendLine($"Timestamp: {currLine}");
-                                    }
-                                    else if (i == 1)
-                                    {
-                                        string priority;
-                                        switch (currLine)
-                                        {
-                                            case "0":
-                                                priority = "Low";
-                                                break;
-                                            case "1":
-                                                priority = "Medium";
-                                                break;
-                                            case "2":
-                                                priority = "High";
-                                                break;
-                                            default:
-                                                priority = "Unknown";
-                                                break;
-                                        }
-
-                                        record.AppendLine($"Priority: {priority}");
-                                    }
-                                    else if (i == 0)
-                                    {
-                                        record.AppendLine($"Type: {currLine}");
-
-                                    }
-                                    else if (i > 4)
+                                    else
                                     {
                                         write.WriteLine(currLine);
-                                        write.WriteLine("\n");
+                                        //write.WriteLine(Environment.NewLine);
                                     }
                                     i++;
-
                                 }
                             }
                         }
@@ -369,20 +328,20 @@ namespace SmpServer
                             int i = 0;
                             while ((line = read.ReadLine()) != null)
                             {
-                                if (i < 3)
+                                if (i < 4)
                                 {
                                     section += line + MESSAGE_SEPERATOR;
                                 }
-                                if (i == 3)
+                                else if (i == 4)
                                 {
                                     section += line + MESSAGE_SEPERATOR;
                                     messageCount++;
 
                                     allMessages.Append(DisplayMessage(section, messageCount));
-                                    i = 0;
+                                    section = string.Empty;
+                                    i = -1;
                                 }
                                 i++;
-
                             }
                         }
 

@@ -177,12 +177,17 @@ namespace SmpServer
                             }
                         }
 
-                        if (File.Exists(@"C:\"+ priorityFile))
-                        {
-                            File.Delete(@"C:\"+ priorityFile);
-                        }
-                        System.IO.File.Move("temp.txt", priorityFile);
-                       
+                        //if (File.Exists(@"D:\" + priorityFile))
+                        //{
+                        //    File.Delete(@"D:\" + priorityFile);
+                        //}
+                        //System.IO.File.Move(@"C:\temp.txt", @"C:\" + priorityFile);
+                        //if (File.Exists("temp.txt"))
+                        //{
+                        //    File.Copy(oldName, newName, true);
+                        //    File.Delete(oldName);
+                        //}
+
                     }
                     else
                     {
@@ -197,6 +202,17 @@ namespace SmpServer
             catch (Exception ex)
             {
                 messageResponse = "Error processing message: " + ex.Message;
+            }
+
+            try
+            {
+                // Replace the file.
+                File.Replace("temp.txt", priorityFile, null, false);
+
+            }
+            catch (Exception e)
+            {
+                messageResponse = "Failed to update file";
             }
 
             return record.ToString();

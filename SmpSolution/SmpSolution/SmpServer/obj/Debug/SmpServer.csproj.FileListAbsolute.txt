@@ -31,3 +31,5 @@ C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.dll
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.pdb
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.Up2Date
+C:\Users\brenn\csci346\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
+C:\Users\brenn\csci346\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.dll

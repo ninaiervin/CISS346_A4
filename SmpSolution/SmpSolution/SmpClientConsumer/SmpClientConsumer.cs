@@ -46,7 +46,7 @@ namespace SmpClientConsumer
 
                 string message = Client.GetMessage(serverIp, port, priority);
 
-                string messageFormatted = DisplayMessage(message, 0);
+                string messageFormatted = DisplayMessage(message);
 
 
 
@@ -58,16 +58,11 @@ namespace SmpClientConsumer
             }
         }
 
-        internal String DisplayMessage(string message, int messageCount)
+        internal String DisplayMessage(string message)
         {
             StringBuilder sb = new StringBuilder();
 
             string[] messageParts = Regex.Split(message, MESSAGE_SEPERATOR);
-
-            if (messageCount > 0)
-            {
-                sb.AppendLine($"Message #{messageCount}");
-            }
 
             sb.AppendLine($"Type: {messageParts[0]}");
 
@@ -103,7 +98,6 @@ namespace SmpClientConsumer
                 sb.AppendLine($"Content: [Decryption failed: {ex.Message}]");
             }
 
-            sb.AppendLine("----------------------------");
             return sb.ToString();
         }
     }

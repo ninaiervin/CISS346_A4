@@ -63,32 +63,28 @@ namespace SmpClientProducer
             {
                 priority = "1";
             }
-            else
+            else if (radioButtonHigh.Checked)
             {
                 priority = "2";
+            }
+            else
+            {
+                priority = "1";
             }
 
             String textBoxMsg = textBoxMessageContent.Text;
             String encryptedMessage = Encryption.EncryptMessage(textBoxMsg, "Public.key");
-            //byte[] messgaeBytes = Encoding.ASCII.GetBytes(textBoxMsg);
-            //byte[] signedHash = HashAndSignBytes(messgaeBytes, "Private.key", SHA256.Create());
-            //String signedmessage = Encoding.ASCII.GetString(signedHash);
             String signedmessage = SignMessage(encryptedMessage);
 
 
 
-            return "SMPPUT" + MESSAGE_SEPERATOR + priority + MESSAGE_SEPERATOR + date + MESSAGE_SEPERATOR + encryptedMessage + MESSAGE_SEPERATOR + signedmessage;
+            return "Version_1_0" + MESSAGE_SEPERATOR + "PutMessage" + MESSAGE_SEPERATOR + priority + MESSAGE_SEPERATOR + date + MESSAGE_SEPERATOR + encryptedMessage + MESSAGE_SEPERATOR + signedmessage;
         }
 
         String SignMessage(String message)
         {
             try
             {
-                //Save the original message to a file
-                //string message = textBoxMessage.Text;
-                //string messageFile = textBoxMessageFile.Text;
-                //File.WriteAllText(messageFile, message);
-
                 //Convert message to byte array
                 byte[] messageBytes = Encoding.ASCII.GetBytes(message);
 
@@ -99,11 +95,6 @@ namespace SmpClientProducer
                 //Get a string representation of the signed message
                 string signedMessage = Convert.ToBase64String(signedHash);
 
-                //Save the signed message to a file
-                //string signedMessageFile = textBoxSignedMessageFile.Text;
-                //File.WriteAllText(signedMessageFile, signedMessage);
-
-                //textBoxtSignedMessage.Text = signedMessage;
                 return signedMessage;
             }
             catch (ArgumentNullException)

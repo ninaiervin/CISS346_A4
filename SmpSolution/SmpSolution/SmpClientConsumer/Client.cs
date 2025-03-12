@@ -9,7 +9,7 @@ namespace SmpClientConsumer
     {
         private const string MESSAGE_SEPARATOR = "<MESSAGE_SEPERATOR>";
 
-        public static string GetMessage(string serverIpAddress, int port, string priority)
+        public static string GetMessage(string serverIpAddress, int port, string message)
         {
             string response = string.Empty;
 
@@ -21,7 +21,6 @@ namespace SmpClientConsumer
                     {
                         using (StreamWriter writer = new StreamWriter(networkStream))
                         {
-                            string message = CreateSmpGetMessage(priority);
                             writer.WriteLine(message);
                             writer.Flush();
                             using (StreamReader reader = new StreamReader(networkStream))
@@ -36,13 +35,9 @@ namespace SmpClientConsumer
             }
             catch (Exception ex)
             {
-                throw new Exception($"Communication error: {ex.Message}", ex);
+                //throw new Exception($"Communication error: {ex.Message}", ex);
+                return "Server not responding";
             }
-        }
-
-        private static string CreateSmpGetMessage(string priority)
-        {
-            return $"SMPGET{MESSAGE_SEPARATOR}{priority}";
         }
     }
 }

@@ -55,18 +55,8 @@ namespace SmpServer
             }
             else
             {
-                //if (response != null)
-                //{
-                //    response = serverForm.DisplayMessage(response.Substring(6), -1);
-                //}
                 SendResponse(response, networkStream);
             }
-
-            
-
-            //string[] packageContent = Regex.Split(message, serverForm.MESSAGE_SEPERATOR);
-            
-            
 
             streamReader.Close();
         }

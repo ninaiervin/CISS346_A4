@@ -44,11 +44,23 @@ namespace SmpClientConsumer
                 if (radioButtonMedium.Checked) priority = "1";
                 if (radioButtonHigh.Checked) priority = "2";
 
-                string message = Client.GetMessage(serverIp, port, priority);
+                string getMessage = "Version_1_0" + MESSAGE_SEPERATOR + "GetMessage" + MESSAGE_SEPERATOR + priority + MESSAGE_SEPERATOR;
 
-                string messageFormatted = DisplayMessage(message);
+                string message = Client.GetMessage(serverIp, port, getMessage);
+                string messageFormatted = "";
 
-
+                if (message == "Server not responding")
+                {
+                    messageFormatted = message;
+                }
+                else if (message != "\r\n")
+                {
+                    messageFormatted = DisplayMessage(message);
+                }
+                else
+                {
+                    messageFormatted = "No record";
+                }
 
                 textBoxMessageContent.Text = messageFormatted;
             }
@@ -63,6 +75,7 @@ namespace SmpClientConsumer
             StringBuilder sb = new StringBuilder();
 
             string[] messageParts = Regex.Split(message, MESSAGE_SEPERATOR);
+            Console.Write(messageParts[1]);
 
             sb.AppendLine($"Type: {messageParts[0]}");
 

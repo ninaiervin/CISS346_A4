@@ -23,8 +23,6 @@ namespace SmpServer
         internal String MESSAGE_SEPERATOR = "<MESSAGE_SEPERATOR>";
         public string IPAddress = "127.0.0.1";
         public int Port = 50400;
-        private string messageType = "";
-        private string messagePriorty = "";
         private string clientMessage;
         public FormSmpServer()
         {
@@ -36,6 +34,8 @@ namespace SmpServer
             try
             {
                 ThreadPool.QueueUserWorkItem(Server.Start, this);
+                // disable button
+                startServerButton.Enabled = false;
             }
             catch (Exception)
             {
@@ -70,24 +70,28 @@ namespace SmpServer
         private string RecordClientMessage()
         {
             String[] packageContent = Regex.Split(clientMessage, MESSAGE_SEPERATOR);
-            textBoxMessageType.Text = packageContent[0];
+            String messageType = packageContent[1];
+            textBoxMessageType.Text = packageContent[1];
 
-            if (packageContent[1] == "0")
+            if (packageContent[2] == "0")
             {
                 textBox1.Text = "Low";
             }
-            else if (packageContent[1] == "1")
+            else if (packageContent[2] == "1")
             {
                 textBox1.Text = "Medium";
-            } 
-            else if (packageContent[1] == "2")
+            }
+            else if (packageContent[2] == "2")
             {
                 textBox1.Text = "High";
             }
 
-
-            if (packageContent[0] == "SMPPUT")
+            if (messageType == "PutMessage")
             {
+                for (int i = 2; i < 5; i++)
+                {
+                    packageContent[i - 1] = packageContent[i];
+                }
                 WriteSMPPUTMessageToFile(packageContent);
                 return "put";
             }
@@ -100,7 +104,7 @@ namespace SmpServer
         internal void WriteSMPPUTMessageToFile(String[] packageContent)
         {
             String filecontent = null;
-            for (int i = 0; i < packageContent.Length; i++)
+            for (int i = 0; i < packageContent.Length-1; i++)
             {
                 filecontent += packageContent[i] + Environment.NewLine;
             }
@@ -123,9 +127,8 @@ namespace SmpServer
             string messageResponse = string.Empty;
             StringBuilder record = new StringBuilder();
 
-
             string priorityFile;
-            switch (packageContent[1])
+            switch (packageContent[2])
             {
                 case "0":
                     priorityFile = "Low.txt";
@@ -159,7 +162,7 @@ namespace SmpServer
                                 {
                                     if (i < 5)
                                     {
-                                        record.Append(currLine + MESSAGE_SEPERATOR + Environment.NewLine);
+                                        record.Append(currLine + MESSAGE_SEPERATOR);
                                     }
                                     else
                                     {

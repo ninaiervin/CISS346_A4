@@ -9,20 +9,6 @@ namespace SmpClientProducer
     {
         public static void SendMessage(string serverIpAddress, int port, string message, FormSmpClientProducer form)
         {
-            //TcpClient client = new TcpClient(serverIpAddress, port);
-            //NetworkStream networkStream = client.GetStream();
-
-            //Send the SMP packet
-            //StreamWriter writer = new StreamWriter(networkStream);
-            //writer.WriteLine(message);
-            //writer.Flush();
-
-            //Receive SMP Response from server
-            //StreamReader reader = new StreamReader(networkStream);
-            //string serverResponse = reader.ReadLine();
-
-            //Done with the server
-
             string response = string.Empty;
             try
             {

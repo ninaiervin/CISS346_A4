@@ -10,3 +10,9 @@ C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.CoreCompileInputs.cache
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.dll
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\bin\Debug\SmpLibrary.dll
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\bin\Debug\SmpLibrary.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.AssemblyReference.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.csproj.CoreCompileInputs.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.dll
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpLibrary\obj\Debug\SmpLibrary.pdb

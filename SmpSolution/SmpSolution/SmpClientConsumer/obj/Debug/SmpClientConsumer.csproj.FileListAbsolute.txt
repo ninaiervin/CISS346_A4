@@ -28,3 +28,13 @@ C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientC
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.csproj.CoreCompileInputs.cache
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.exe
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\bin\Debug\SmpClientConsumer.exe.config
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\bin\Debug\SmpClientConsumer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\bin\Debug\SmpClientConsumer.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.csproj.AssemblyReference.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.FormSmpClientConsumer.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.Properties.Resources.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.csproj.GenerateResource.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.csproj.CoreCompileInputs.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpClientConsumer\obj\Debug\SmpClientConsumer.pdb

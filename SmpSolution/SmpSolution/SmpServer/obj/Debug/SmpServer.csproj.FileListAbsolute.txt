@@ -31,3 +31,16 @@ C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.dll
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.pdb
 C:\Users\harry\Personal\ProjCSharp\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.Up2Date
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe.config
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpServer.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.dll
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\bin\Debug\SmpLibrary.pdb
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.AssemblyReference.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.FormSmpServer.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.Properties.Resources.resources
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.GenerateResource.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.CoreCompileInputs.cache
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.csproj.Up2Date
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.exe
+C:\Users\21jos\OneDrive\Documents\College\Coding\CISS 346\Assignment 4\Assignment_4\CISS346_A4\SmpSolution\SmpSolution\SmpServer\obj\Debug\SmpServer.pdb

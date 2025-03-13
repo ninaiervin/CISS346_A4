@@ -178,7 +178,6 @@
             this.radioButtonHigh.Name = "radioButtonHigh";
             this.radioButtonHigh.Size = new System.Drawing.Size(56, 20);
             this.radioButtonHigh.TabIndex = 2;
-            this.radioButtonHigh.TabStop = true;
             this.radioButtonHigh.Text = "High";
             this.radioButtonHigh.UseVisualStyleBackColor = true;
             // 
@@ -189,13 +188,13 @@
             this.radioButtonMedium.Name = "radioButtonMedium";
             this.radioButtonMedium.Size = new System.Drawing.Size(76, 20);
             this.radioButtonMedium.TabIndex = 1;
-            this.radioButtonMedium.TabStop = true;
             this.radioButtonMedium.Text = "Medium";
             this.radioButtonMedium.UseVisualStyleBackColor = true;
             // 
             // radioButtonLow
             // 
             this.radioButtonLow.AutoSize = true;
+            this.radioButtonLow.Checked = true;
             this.radioButtonLow.Location = new System.Drawing.Point(31, 32);
             this.radioButtonLow.Name = "radioButtonLow";
             this.radioButtonLow.Size = new System.Drawing.Size(52, 20);
